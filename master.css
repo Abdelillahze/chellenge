@@ -15,8 +15,6 @@ body {
 }
 
 .design {
-    width: 700px;
-    height: 300px;
     display: flex;
     justify-content: space-between;
     background-color: hsl(244, 38%, 16%);
@@ -24,9 +22,9 @@ body {
     overflow: hidden;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
     .design {
-        justify-content: center;
+        height: 80%;
         flex-direction: column;
     }
 }
@@ -78,21 +76,23 @@ body {
     margin-top: 5px;
 }
 
-.design picture {
+.design .picture {
     position: relative;
-    z-index: 1;
     flex-basis: 50%;
+    max-width: 100%;
+    order: -1;
     background-size: cover;
     background-image: url("images/image-header-desktop.jpg");
 }
 
-@media (max-width: 375px) {
-    .design picture {
-        order: -1;
+@media (max-width: 767px) {
+    .design .picture {
+        background-image: url("images/image-header-mobile.jpg");
+        background-size: cover;
     }
 }
 
-.design picture::before {
+.design .picture::before {
     content: '';
     position: absolute;
     top: 0;
